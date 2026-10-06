@@ -1,6 +1,6 @@
 # RAGOX — Technology & Digital Experience Agency
 
-REGOX is a modern portfolio and digital experience platform for a high-craft technology agency specializing in Web Development, UI/UX Design, Digital Product Design, and AI Solutions.
+RAGOX is a modern portfolio and digital experience platform for a high-craft technology agency specializing in Web Development, UI/UX Design, Digital Product Design, and AI Solutions.
 
 ---
 
@@ -35,7 +35,7 @@ REGOX is a modern portfolio and digital experience platform for a high-craft tec
 ## 3. Directory Structure
 
 ```
-REGOX/
+RAGOX/
 ├── frontend/
 │   ├── public/
 │   │   ├── assets/
