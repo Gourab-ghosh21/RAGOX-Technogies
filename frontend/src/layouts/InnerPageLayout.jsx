@@ -14,7 +14,7 @@ export const InnerPageLayout = () => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen bg-[#07080a] text-[#f4f5f8] flex flex-col font-sans selection:bg-[#0066ff] selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#05070e] text-slate-100 flex flex-col font-sans selection:bg-sky-500 selection:text-white relative overflow-x-hidden">
       {/* Desktop subtle custom cursor */}
       <CustomCursor />
 
@@ -23,11 +23,11 @@ export const InnerPageLayout = () => {
 
       {/* Subtle editorial contrast veil ensuring text readability without dimming fluid motion */}
       <div 
-        className="fixed inset-0 bg-gradient-to-b from-[#07080a]/40 via-transparent to-[#07080a]/65 pointer-events-none z-0" 
+        className="fixed inset-0 bg-gradient-to-b from-[#05070e]/40 via-transparent to-[#05070e]/70 pointer-events-none z-0" 
         aria-hidden="true" 
       />
 
-      {/* Shared Navigation */}
+      {/* Shared Navigation with Glassmorphism */}
       <Navbar />
 
       {/* Page Content Viewport */}
@@ -44,3 +44,4 @@ export const InnerPageLayout = () => {
 };
 
 export default InnerPageLayout;
+

@@ -31,20 +31,22 @@ export const AboutPage = () => {
     <div className="container-custom">
       {/* Header */}
       <div className="max-w-3xl mb-12 sm:mb-16">
-        <div className="font-mono text-xs uppercase tracking-[0.2em] text-[#0066ff] mb-3">
+        <div className="font-mono text-xs uppercase tracking-[0.2em] text-sky-400 mb-3 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
           // STUDIO PHILOSOPHY & CAPABILITY
         </div>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-[#f4f5f8] mb-6">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white mb-6">
           ENGINEERING AT THE HIGHEST STANDARD
         </h1>
-        <p className="text-[#9aa1b0] text-base sm:text-lg leading-relaxed max-w-2xl">
+        <p className="text-slate-300/85 text-base sm:text-lg leading-relaxed max-w-2xl">
           REGOX is an elite technology agency specializing in modern web applications, high-density digital software, and bespoke interface systems. We operate at the intersection of technical architecture and editorial design.
         </p>
       </div>
 
-      {/* Core Principles */}
+      {/* Core Principles: Semi-Transparent Glass Cards */}
       <div className="mb-16 sm:mb-24">
-        <div className="font-mono text-xs uppercase tracking-widest text-[#0066ff] mb-6">
+        <div className="font-mono text-xs uppercase tracking-widest text-sky-400 mb-6 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
           // ARCHITECTURAL PRINCIPLES
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -53,15 +55,15 @@ export const AboutPage = () => {
             return (
               <div
                 key={idx}
-                className="rounded-[14px] bg-[rgba(14,16,21,0.65)] border border-[rgba(255,255,255,0.08)] p-6 sm:p-8 backdrop-blur-md"
+                className="rounded-[22px] glass-card p-6 sm:p-8"
               >
-                <div className="p-2.5 rounded-lg bg-[rgba(0,102,255,0.12)] border border-[rgba(0,102,255,0.25)] text-[#0066ff] w-fit mb-4">
+                <div className="p-3 rounded-xl bg-sky-500/10 border border-sky-400/25 text-sky-400 w-fit mb-4 shadow-[0_0_15px_rgba(56,189,248,0.2)]">
                   <Icon size={20} />
                 </div>
-                <h2 className="text-lg font-bold uppercase tracking-tight text-[#f4f5f8] mb-2">
+                <h2 className="text-lg font-bold uppercase tracking-tight text-slate-100 mb-2">
                   {item.title}
                 </h2>
-                <p className="text-sm text-[#8c94a4] leading-relaxed">
+                <p className="text-sm text-slate-300/80 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -70,29 +72,30 @@ export const AboutPage = () => {
         </div>
       </div>
 
-      {/* Technology Convergence */}
+      {/* Technology Convergence: Glass Cards Grid */}
       <div className="mb-16 sm:mb-24">
-        <div className="font-mono text-xs uppercase tracking-widest text-[#0066ff] mb-4">
+        <div className="font-mono text-xs uppercase tracking-widest text-sky-400 mb-4 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
           // TECHNICAL CONVERGENCE
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-[#f4f5f8] mb-8">
+        <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-8">
           OUR CORE PRODUCTION STACK
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="rounded-[10px] bg-[rgba(14,16,21,0.6)] border border-[rgba(255,255,255,0.06)] p-4 flex flex-col justify-between backdrop-blur-md"
+              className="rounded-xl glass-card-subtle p-4 flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-[10px] text-[#0066ff] uppercase tracking-wider block mb-1">
+                <span className="font-mono text-[10px] text-sky-400 uppercase tracking-wider block mb-1">
                   {tech.category}
                 </span>
-                <span className="font-bold text-sm text-[#f4f5f8]">
+                <span className="font-bold text-sm text-slate-100">
                   {tech.name}
                 </span>
               </div>
-              <span className="font-mono text-[10px] text-[#6e7686] mt-3 block">
+              <span className="font-mono text-[10px] text-slate-400 mt-3 block">
                 {tech.role}
               </span>
             </div>
@@ -100,22 +103,23 @@ export const AboutPage = () => {
         </div>
       </div>
 
-      {/* Bottom CTA */}
-      <div className="p-8 sm:p-12 rounded-[16px] bg-[rgba(14,16,21,0.7)] border border-[rgba(255,255,255,0.08)] backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      {/* Bottom CTA: Translucent Glass Card */}
+      <div className="p-8 sm:p-12 rounded-[24px] glass-card-static border border-white/[0.1] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]">
         <div>
-          <div className="font-mono text-xs uppercase tracking-widest text-[#0066ff] mb-2">
+          <div className="font-mono text-xs uppercase tracking-widest text-sky-400 mb-2 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
             // COLLABORATION
           </div>
-          <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#f4f5f8]">
+          <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white">
             LET'S BUILD TOGETHER
           </h3>
-          <p className="text-[#8c94a4] text-sm mt-1 max-w-lg">
+          <p className="text-slate-300/80 text-sm mt-1 max-w-lg">
             Whether you require an architectural consultation, a dedicated product sprint, or a full-scale rebuild, our studio is ready to execute.
           </p>
         </div>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#0066ff] hover:bg-[#0052cc] text-white text-xs font-mono uppercase tracking-wider font-bold transition-all shadow-[0_0_25px_rgba(0,102,255,0.35)] shrink-0"
+          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-mono uppercase tracking-wider font-bold transition-all shadow-[0_0_25px_rgba(59,130,246,0.4),inset_0_1px_0_rgba(255,255,255,0.25)] border border-white/20 shrink-0"
         >
           <span>GET IN TOUCH</span>
           <ArrowRight size={14} />
@@ -126,3 +130,4 @@ export const AboutPage = () => {
 };
 
 export default AboutPage;
+

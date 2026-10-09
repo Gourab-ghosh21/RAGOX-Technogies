@@ -8,16 +8,22 @@
    ========================================================================== */
 
 :root {
-  --bg-primary: #07080a;
-  --bg-surface: #0e1015;
-  --bg-surface-elevated: #151821;
+  --bg-primary: #05070e;
+  --bg-surface: rgba(11, 16, 29, 0.65);
+  --bg-surface-elevated: rgba(17, 24, 39, 0.78);
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-medium: rgba(255, 255, 255, 0.16);
-  --accent-blue: #0066ff;
-  --accent-blue-glow: rgba(0, 102, 255, 0.25);
-  --text-primary: #f4f5f8;
-  --text-secondary: #9aa1b0;
-  --text-muted: #5e6575;
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-glass-glow: rgba(56, 189, 248, 0.35);
+  --accent-blue: #3b82f6;
+  --accent-cyan: #38bdf8;
+  --accent-indigo: #6366f1;
+  --accent-violet: #8b5cf6;
+  --accent-blue-glow: rgba(59, 130, 246, 0.25);
+  --accent-cyan-glow: rgba(56, 189, 248, 0.25);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Space Grotesk', ui-monospace, monospace;
 }
@@ -118,23 +124,84 @@ img, video {
 /* Subtle Architectural Grid Background */
 .grid-lines-bg {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
-/* Subtle Cinematic Radial Lighting */
+/* Rich Multidimensional Cinematic Radial Lighting */
 .hero-radial-lighting {
   background: 
-    radial-gradient(circle at 80% 25%, rgba(0, 102, 255, 0.08) 0%, transparent 55%),
-    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 20% 75%, rgba(99, 102, 241, 0.1) 0%, transparent 55%),
+    radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
 }
 
-/* Editorial Gradient Text */
+/* Editorial Gradient Text with complementary metallic and azure luster */
 .text-gradient {
-  background: linear-gradient(180deg, #ffffff 15%, #b5bbc8 100%);
+  background: linear-gradient(135deg, #ffffff 10%, #cbd5e1 55%, #93c5fd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Navigation Utility */
+.glass-nav-scrolled {
+  background: rgba(5, 7, 14, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav-transparent {
+  background: rgba(5, 7, 14, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Transparent Glass Cards Utilities */
+.glass-card {
+  background: rgba(11, 16, 29, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(16, 24, 42, 0.72);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 50px -8px rgba(59, 130, 246, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.glass-card-static {
+  background: rgba(11, 16, 29, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-subtle {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-subtle:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 /* Pill badge */
@@ -148,15 +215,26 @@ img, video {
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
   color: var(--text-secondary);
 }
 
 .pill-blue {
-  background: rgba(0, 102, 255, 0.08);
-  border-color: rgba(0, 102, 255, 0.35);
-  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #7dd3fc;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.pill-indigo {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(129, 140, 248, 0.3);
+  color: #a5b4fc;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Custom Scrollbar */
@@ -170,12 +248,12 @@ img, video {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c202a;
+  background: #172033;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3140;
+  background: #25334e;
 }
 
 /* Accessible Focus Rings */
