@@ -9,7 +9,7 @@ export const Services = () => {
   const activeService = services[hoveredIndex] || services[0];
 
   return (
-    <section id="services" className="py-32 border-b border-[rgba(255,255,255,0.08)] bg-[#07080a] relative">
+    <section id="services" className="py-32 border-b border-white/[0.08] bg-[#05070e] relative">
       <div className="container-custom">
         <SectionHeading
           badge="// 02 CAPABILITIES"
@@ -18,7 +18,7 @@ export const Services = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Left Column: Interactive List Rows */}
+          {/* Left Column: Interactive List Rows as Glass Cards */}
           <div className="lg:col-span-7 space-y-4">
             {services.map((service, index) => {
               const isHovered = hoveredIndex === index;
@@ -29,17 +29,17 @@ export const Services = () => {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onFocus={() => setHoveredIndex(index)}
                   onClick={() => setHoveredIndex(index)}
-                  className={`group relative p-6 sm:p-8 rounded-[16px] border transition-all duration-300 cursor-pointer select-none focus:outline-none ${
+                  className={`group relative p-6 sm:p-8 rounded-[18px] border transition-all duration-300 cursor-pointer select-none focus:outline-none backdrop-blur-md ${
                     isHovered
-                      ? 'bg-[#0e1118] border-[rgba(0,102,255,0.5)] shadow-[0_8px_32px_rgba(0,0,0,0.5)] translate-x-1'
-                      : 'bg-[#090b10] border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.16)]'
+                      ? 'bg-slate-900/75 border-sky-400/40 shadow-[0_12px_36px_rgba(56,189,248,0.15),inset_0_1px_0_rgba(255,255,255,0.15)] translate-x-1'
+                      : 'bg-white/[0.025] hover:bg-white/[0.05] border-white/[0.07] hover:border-white/[0.14] shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-baseline gap-6">
                       <span
                         className={`font-mono text-base sm:text-lg font-bold transition-colors ${
-                          isHovered ? 'text-[#0066ff]' : 'text-[#626a7a]'
+                          isHovered ? 'text-sky-400' : 'text-slate-500'
                         }`}
                       >
                         {service.number}
@@ -47,7 +47,7 @@ export const Services = () => {
 
                       <h3
                         className={`text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight transition-colors ${
-                          isHovered ? 'text-[#f4f5f8]' : 'text-[#a2aab8] group-hover:text-[#f4f5f8]'
+                          isHovered ? 'text-white' : 'text-slate-300 group-hover:text-white'
                         }`}
                       >
                         {service.title}
@@ -56,14 +56,14 @@ export const Services = () => {
 
                     <div className="flex items-center gap-3">
                       {isHovered && (
-                        <span className="w-2 h-2 rounded-full bg-[#0066ff] shadow-[0_0_8px_#0066ff]"></span>
+                        <span className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
                       )}
                       <ArrowRight
                         size={20}
                         className={`transition-transform duration-200 ${
                           isHovered
-                            ? 'text-[#0066ff] translate-x-1'
-                            : 'text-[#4e5564] group-hover:text-[#88909f]'
+                            ? 'text-sky-400 translate-x-1'
+                            : 'text-slate-500 group-hover:text-slate-300'
                         }`}
                       />
                     </div>
@@ -73,18 +73,18 @@ export const Services = () => {
                   <div
                     className={`transition-all duration-300 overflow-hidden ${
                       isHovered
-                        ? 'max-h-40 opacity-100 mt-4 pt-4 border-t border-[rgba(255,255,255,0.06)]'
+                        ? 'max-h-40 opacity-100 mt-4 pt-4 border-t border-white/[0.08]'
                         : 'max-h-0 opacity-0 lg:max-h-0'
                     }`}
                   >
-                    <p className="text-sm text-[#9aa1b0] leading-relaxed">
+                    <p className="text-sm text-slate-300/85 leading-relaxed">
                       {service.shortDescription}
                     </p>
                     <div className="flex flex-wrap gap-2 pt-3">
                       {service.technologies.map((t, idx) => (
                         <span
                           key={idx}
-                          className="font-mono text-[11px] px-2.5 py-0.5 rounded bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#cbd0dc]"
+                          className="font-mono text-[11px] px-2.5 py-0.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
                         >
                           {t}
                         </span>
@@ -96,36 +96,37 @@ export const Services = () => {
             })}
           </div>
 
-          {/* Right Column: Deep-Dive Preview Card */}
+          {/* Right Column: Deep-Dive Preview Glass Card */}
           <div className="hidden lg:block lg:col-span-5 sticky top-32">
-            <div className="bg-[#0b0e14] border border-[rgba(255,255,255,0.1)] rounded-[20px] p-8 sm:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.7)] space-y-8 relative overflow-hidden">
-              <div className="flex items-center justify-between border-b border-[rgba(255,255,255,0.08)] pb-4">
-                <span className="font-mono text-xs uppercase text-[#0066ff] font-bold">
+            <div className="glass-card-static rounded-[22px] p-8 sm:p-10 space-y-8 relative overflow-hidden border border-white/[0.1] shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)]">
+              <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
+                <span className="font-mono text-xs uppercase text-sky-400 font-bold flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
                   CAPABILITY // {activeService.number}
                 </span>
-                <span className="font-mono text-xs text-[#6e7686]">SERVICE SPEC</span>
+                <span className="font-mono text-xs text-slate-400">SERVICE SPEC</span>
               </div>
 
               <div>
-                <h4 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-[#f4f5f8] mb-3">
+                <h4 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-slate-100 mb-3">
                   {activeService.title}
                 </h4>
-                <p className="text-sm text-[#9aa1b0] leading-relaxed">
+                <p className="text-sm text-slate-300/85 leading-relaxed">
                   {activeService.fullDescription}
                 </p>
               </div>
 
               <div className="space-y-3">
-                <span className="font-mono text-xs uppercase tracking-wider text-[#6e7686] block">
+                <span className="font-mono text-xs uppercase tracking-wider text-slate-400 block">
                   DELIVERABLES INCLUDED
                 </span>
                 <div className="space-y-2">
                   {activeService.deliverables.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2.5 text-xs text-[#d1d5df] p-2.5 rounded-[8px] bg-[#0f131c] border border-[rgba(255,255,255,0.05)]"
+                      className="flex items-center gap-2.5 text-xs text-slate-200 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
                     >
-                      <Check size={14} className="text-[#0066ff] shrink-0" />
+                      <Check size={14} className="text-sky-400 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -135,7 +136,7 @@ export const Services = () => {
               <div className="pt-2">
                 <a
                   href="#contact"
-                  className="w-full py-3.5 rounded-[8px] bg-[#f4f5f8] hover:bg-white text-[#07080a] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 no-underline transition-colors"
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 no-underline transition-all shadow-[0_4px_20px_rgba(59,130,246,0.35),inset_0_1px_0_rgba(255,255,255,0.25)] border border-white/20"
                 >
                   <span>INQUIRE ABOUT THIS SERVICE</span>
                   <ArrowRight size={14} />
@@ -148,3 +149,4 @@ export const Services = () => {
     </section>
   );
 };
+

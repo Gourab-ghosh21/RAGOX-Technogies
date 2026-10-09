@@ -11,7 +11,7 @@ import { CustomCursor } from '../components/CustomCursor';
  */
 export const HomePage = () => {
   return (
-    <div className="min-h-[100svh] lg:h-[100svh] bg-[#07080a] text-[#f4f5f8] flex flex-col font-sans selection:bg-[#0066ff] selection:text-white relative overflow-x-hidden lg:overflow-hidden">
+    <div className="min-h-[100svh] lg:h-[100svh] bg-[#05070e] text-slate-100 flex flex-col font-sans selection:bg-sky-500 selection:text-white relative overflow-x-hidden lg:overflow-hidden">
       {/* Desktop subtle custom cursor */}
       <CustomCursor />
 
@@ -27,3 +27,4 @@ export const HomePage = () => {
 };
 
 export default HomePage;
+
