@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { X, CheckCircle2, ArrowRight, Layers, Code2, ShieldAlert, Cpu } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { X, CheckCircle2, ArrowRight, ArrowUpRight, Layers, Code2, ShieldAlert, Cpu } from 'lucide-react';
 import { ProjectPreviewVisual } from './ProjectPreviewVisual';
 
 export const CaseStudyModal = ({ project, isOpen, onClose }) => {
@@ -179,8 +180,15 @@ export const CaseStudyModal = ({ project, isOpen, onClose }) => {
         </div>
 
         {/* Modal Footer */}
-        <div className="flex items-center justify-between px-6 py-4 border-t border-[rgba(255,255,255,0.08)] bg-[#090b10]">
-          <span className="font-mono text-xs text-[#6e7686]">REGOX CASE STUDY SPECIFICATION</span>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-6 py-4 border-t border-[rgba(255,255,255,0.08)] bg-[#090b10]">
+          <Link
+            to={`/work/${project.id}`}
+            onClick={onClose}
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#0066ff] hover:text-white transition-colors"
+          >
+            <span>OPEN DEDICATED CASE STUDY URL</span>
+            <ArrowUpRight size={13} />
+          </Link>
           <a
             href="#contact"
             onClick={onClose}

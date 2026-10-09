@@ -1,40 +1,41 @@
 import React from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './sections/Hero';
-import { SelectedWork } from './sections/SelectedWork';
-import { Services } from './sections/Services';
-import { Process } from './sections/Process';
-import { About } from './sections/About';
-import { TechConvergence } from './sections/TechConvergence';
-import { CaseStudyPreview } from './sections/CaseStudyPreview';
-import { Contact } from './sections/Contact';
-import { Footer } from './components/Footer';
-import { CustomCursor } from './components/CustomCursor';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { InnerPageLayout } from './layouts/InnerPageLayout';
+import { WorkPage } from './pages/WorkPage';
+import { ServicesPage } from './pages/ServicesPage';
+import { ProcessPage } from './pages/ProcessPage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
+import { CaseStudyPage } from './pages/CaseStudyPage';
 
 export const App = () => {
   return (
-    <div className="min-h-screen bg-[#07080a] text-[#f4f5f8] flex flex-col font-sans selection:bg-[#0066ff] selection:text-white">
-      {/* Desktop subtle custom cursor */}
-      <CustomCursor />
+    <BrowserRouter>
+      <Routes>
+        {/* HOMEPAGE ROUTE — 100% UNCHANGED, preserving existing single-page UI/UX */}
+        <Route path="/" element={<HomePage />} />
 
-      {/* Sticky Navigation */}
-      <Navbar />
+        {/* INNER PAGES — Wrapped in InnerPageLayout with WebGL2 LiquidFilm background */}
+        <Route element={<InnerPageLayout />}>
+          <Route path="/work" element={<WorkPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/process" element={<ProcessPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
 
-      {/* Main Single-Page Sections */}
-      <main className="flex-1">
-        <Hero />
-        <SelectedWork />
-        <Services />
-        <Process />
-        <About />
-        <TechConvergence />
-        <CaseStudyPreview />
-        <Contact />
-      </main>
+          {/* Individual Case Study Routes */}
+          <Route path="/work/infotally" element={<CaseStudyPage />} />
+          <Route path="/work/astra" element={<CaseStudyPage />} />
+          <Route path="/work/rexpo" element={<CaseStudyPage />} />
+          <Route path="/work/packcheck" element={<CaseStudyPage />} />
+          <Route path="/work/:slug" element={<CaseStudyPage />} />
+        </Route>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Fallback route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

@@ -124,7 +124,7 @@ export const Contact = () => {
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#0066ff] font-semibold">
-                // 07 INITIATE DIALOGUE
+                // 06 INITIATE DIALOGUE
               </span>
               <span className="w-8 h-[1px] bg-[rgba(0,102,255,0.4)]"></span>
             </div>
